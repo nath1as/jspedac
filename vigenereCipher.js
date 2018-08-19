@@ -3,7 +3,7 @@ function vigenereEncrypt(plaintext, key) {
   var abcLower = 'abcdefghijklmnopqrstuvwxyz'.split('');
   var length = key.length;
   var counter = 0;
-  var keys = key.split('').map(function (char, index) {
+  var keys = key.split('').map(function (char) {
     return char = abcLower.indexOf(char.toLowerCase());
   });
 
