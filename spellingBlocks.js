@@ -23,29 +23,35 @@ function isBlockWord(string) {
     for (j = 0; j < ak.length; j++) {
       if (object[ak[j]] === value) {
         return ak[j];
-      } else {
-        return "ERROR";
       }
     }
+    return "ERROR";
   }
 
   function findValue(object, key) {
-    var ak = Object.values(object);
-    var k;
-    for (k = 0; k < ak.length; k++) {
-      if (object[ak[k]] === key) {
-        return ak[k];
-      } else {
-        return "ERROR";
-      }
+    if (object[key] !== undefined) {
+      return object[key];
+    } else {
+      return false;
     }
   }
 
-  
+  function isInBlock(object, char) {
+    if (findValue(object, char)) {
+      return true;
+    } else if (findKey(object, char)) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
   for (i = 0; i < array.length; i++) {
     if (findKey(blocks, array[i])) {
-    console.log(findKey(blocks, array[i]));
+      delete blocks[(findKey(blocks, array[i]))];
     } else if (findValue(blocks, array[i])) {
+      delete blocks[(findValue(blocks, array[i]))];
     } else {
       return false;
     }
