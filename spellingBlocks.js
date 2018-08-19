@@ -47,6 +47,28 @@ function isBlockWord(string) {
   }
   return true;
 }
+
+// alternative:
+// function isBlockWord(word) {
+//   var blocks = ['BO', 'XK', 'DQ', 'CP', 'NA', 'GT', 'RE', 'FS', 'JW', 'HU', 'VI', 'LY', 'ZM'];
+//   var letters = word.split('');
+//   var matchingBlock;
+//   var i;
+
+//   for (i = 0; i < letters.length; i += 1) {
+//     matchingBlock = blocks.filter(function (block) {
+//       return block.indexOf(letters[i].toUpperCase()) > -1;
+//     })[0];
+
+//     if (matchingBlock === undefined) {
+//       return false;
+//     } else {
+//       blocks.splice(blocks.indexOf(matchingBlock), 1);
+//     }
+//   }
+
+//   return true;
+// }
 console.log(
   isBlockWord('BATCH'),      // true
   isBlockWord('BUTCH'),      // false
