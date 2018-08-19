@@ -25,7 +25,7 @@ function isBlockWord(string) {
         return ak[j];
       }
     }
-    return "ERROR";
+    return ;
   }
 
   function findValue(object, key) {
@@ -34,17 +34,6 @@ function isBlockWord(string) {
     } else {
       return false;
     }
-  }
-
-  function isInBlock(object, char) {
-    if (findValue(object, char)) {
-      return true;
-    } else if (findKey(object, char)) {
-      return true;
-    } else {
-      return false;
-    }
-
   }
 
   for (i = 0; i < array.length; i++) {
@@ -59,18 +48,18 @@ function isBlockWord(string) {
   return true;
 }
 console.log(
-  // isBlockWord('BATCH'),      // true
+  isBlockWord('BATCH'),      // true
   isBlockWord('BUTCH'),      // false
-  // isBlockWord('jest'),       // true
-  // isBlockWord('Pest'),       // true
-  // isBlockWord('BATCH'),      // true
-  // isBlockWord('BUTCH'),      // false
-  // isBlockWord('jest'),       // true
-  // isBlockWord('floW'),       // true
-  // isBlockWord('APPLE'),      // false
-  // isBlockWord('apple'),      // false
-  // isBlockWord('apPLE'),      // false
-  // isBlockWord('Box'),        // false
+  isBlockWord('jest'),       // true
+  isBlockWord('Pest'),       // true
+  isBlockWord('BATCH'),      // true
+  isBlockWord('BUTCH'),      // false
+  isBlockWord('jest'),       // true
+  isBlockWord('floW'),       // true
+  isBlockWord('APPLE'),      // false
+  isBlockWord('apple'),      // false
+  isBlockWord('apPLE'),      // false
+  isBlockWord('Box'),        // false
 );
 
 
